@@ -1,9 +1,87 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <h1>diverse testjes</h1>
-        <p>Zomaar wat testjes</p>
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+<head>
+<!-- externe sheet met: h1,h2   -->
+<link rel="stylesheet" type="text/css" href="test.css">
+<style>
+/* testje
+ */
+body /* The element Selector */
+{
+	background-color:#d0e4fe;
+	/* http://www.w3schools.com/css/css_background.asp */
+	background-image:url("paper.gif");
+	background-repeat:repeat-y;
+}
+p
+{
+	font-family:"Times New Roman";
+	font-size:20px;
+}
+#para1 /* The id Selector */
+{
+	color:green;
+	background-image:url("paper.gif");
+	background-repeat:no-repeat;
+	background-repeat:repeat-x;
+}
+.red /*The class Selector */
+{
+	color:red;
+}
+p.override
+{
+	color:green;
+}
+</style>
+</head>
+<body>
+<h1>CSS example!</h1>
+Wat losse tekst.
+<h2>Test met selectors</h2>
+<p>This is a paragraph.</p>
+<p id="para1">Paragraaf met id=para1</p>
+<p class="red">Paragraaf met class="red"</p>
+<p class="override">Paragraaf met class="override" (test.css=blue header=green)</p>
+<p class="override" style="color:grey;">Paragraaf met class="override"  style="color:grey;" (test.css=blue header=green)</p>
+<p style="color:sienna;margin-left:20px;">Paragraaf met style="color:sienna;margin-left:20px;"</p>
+
+<p class="uppercase">Paragraaf met class="uppercase"</p>
+<p class="lowercase">Paragraaf met class="lowercase"</p>
+<p class="capitalize">Paragraaf met class="capitalize"</p>
+<p class="overline">Paragraaf met class="overline"</p>
+<p class="line-through">Paragraaf met class="line-through"</p>
+<p class="underline">Paragraaf met class="underline"</p>
+
+<button	onclick="fontVariant('normal')">normal</button>
+<button onclick="fontVariant('small-caps')">small-caps</button>
+<button onclick="fontVariant('initial')">initial</button>
+<button onclick="fontVariant('inherit')">inherit</button>
+<span id="myDIV">Met veranderingen via Button.</span> <span id="myDIV.out">-</span>
+
+<div class="ex" id="ex" style="width:300px;" onclick="boxModelTest('1px solid blue')" ondblclick="boxModelTest('10px dotted red')" >The picture above is 250px wide.
+The total width of this element is also 250px.<br>(<span id="ex.out">?</span>)</div>
+
+</body>
+<script>
+function fontVariant( variant )
+{
+	document.getElementById("myDIV").style.fontVariant = variant;
+	document.getElementById("myDIV.out").innerHTML = variant;
+}
+function boxModelTest( border )
+{
+	retStr = "border=\""+document.getElementById("ex").style.border+"\"";
+	retStr += " borderWidth=\""+document.getElementById("ex").style.borderWidth+"\"";
+	retStr += " Parent=\""+document.getElementById("ex").parentNode.style.border+"\"";
+	retStr += " document=\""+document.toString()+"\"";
+	retStr += " document.clientHeight=\""+document.clientHeight+"\"";
+	retStr += " document.hasChildNodes()=\""+document.hasChildNodes()+"\"";
+	document.innerHTML = "<b>InnerHTML van "+document.toString()+"</b>";
+	retStr += " document.innerHTML=\""+document.innerHTML+"\"";
+	retStr += " document.nodeName=\""+document.nodeName+"\"";
+	document.getElementById("ex").style.border = border;
+	document.getElementById("ex.out").innerHTML = "border="+border+" —"+retStr;
+}
+</script>
 </html>

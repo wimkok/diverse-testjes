@@ -1,0 +1,36 @@
+/* De titles */
+h1,h2
+{
+	color:orange;
+	text-align:center;
+}
+h1
+{
+	font-sixe:20px;
+}
+h2
+{
+	font-sixe:14px;
+}
+p.override
+{
+	color:blue;
+}
+
+/* http://www.w3schools.com/css/css_text.asp */
+p.uppercase {text-transform:uppercase;}
+p.lowercase {text-transform:lowercase;}
+p.capitalize {text-transform:capitalize;}
+
+p.overline {text-decoration:overline;}
+p.line-through {text-decoration:line-through;}
+p.underline {text-decoration:underline;}
+
+div.ex
+{
+width:220px;
+padding:10px;
+border:5px solid black;
+margin:5px;
+outline:red solid 5px;
+}

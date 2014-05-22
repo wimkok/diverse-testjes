@@ -3,6 +3,7 @@
 <head>
 <!-- externe sheet met: h1,h2   -->
 <link rel="stylesheet" type="text/css" href="test.css">
+<script src="showDOM.js"></script>
 <style>
 /* testje
  */
@@ -38,6 +39,7 @@ p.override
 <body>
 <h1>CSS example!</h1>
 Wat losse tekst.
+<div class="ex" id="showDOM" style="width:300px;" onclick="showDOM()">--</div>
 <h2>Test met selectors</h2>
 <p>This is a paragraph.</p>
 <p id="para1">Paragraaf met id=para1</p>
@@ -81,7 +83,7 @@ function boxModelTest( border )
 	retStr += " document.innerHTML=\""+document.innerHTML+"\"";
 	retStr += " document.nodeName=\""+document.nodeName+"\"";
 	document.getElementById("ex").style.border = border;
-	document.getElementById("ex.out").innerHTML = "border="+border+" —"+retStr;
+	document.getElementById("ex.out").innerHTML = "border="+border+" ï¿½"+retStr;
 }
 </script>
 </html>

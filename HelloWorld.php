@@ -10,9 +10,28 @@ Value: <input type="text" name="val"><br>
 </form>
 
 <?php
-echo "<h1>Hello world</h1>"
-$keyvals = array("Key0","Val0");
 
+echo "<h1>Hello world</h1>";
+
+$cars=array("Volvo","BMW","Toyota");
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".<br>";
+$keyvals = array(array("Key0","Val0"));
+echo "keyvals = " . $keyvals[0] . ".<br>";
+echo "key = " . $keyvals[0][0] . ".<br>";
+echo "rows = " . count($keyvals) . ".<br>";
+echo "cols = " . count($keyvals[0]). ".<br>";
+
+$key = $_POST["key"];
+$val = $_POST["val"];
+
+echo "Key = " . $key . " val = " . $val . ".<br>";
+
+$keyvals[count($keyvals)] = array($key,$val);
+echo "rows = " . count($keyvals) . ".<br>";
+
+
+/*
+$keyvals = array("Key0","Val0");
 $key   = $_POST["key"];
 $val = $_POST["val"];
 
@@ -31,6 +50,7 @@ for($x=0;$x<$arrlength;$x++) {
   echo $keyvals[$x];
   echo "<br>";
 }
+*/
 
 
 ?>
